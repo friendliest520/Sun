@@ -72,8 +72,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ steps.lowercase.outputs.owner }}/moontv
-          tags: |
+          images: ghcr.io/${{ steps.lowercase.outputs.owner }}/sun
             type=ref,event=pr
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value={{steps.version.outputs.version}}
@@ -139,7 +138,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ steps.lowercase.outputs.owner }}/moontv
+          images: ghcr.io/${{ steps.lowercase.outputs.owner }}/sun
           tags: |
             type=ref,event=pr,prefix=pr-
             type=raw,value=latest,enable={{is_default_branch}}
